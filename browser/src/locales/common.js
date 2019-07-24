@@ -1,6 +1,6 @@
 export default {
   zh: {
-    projectTitle: 'Vue 样板模板',
+    projectTitle: '凤聚宝管理后台',
     cancel: '取 消',
     confirm: '确 定',
 

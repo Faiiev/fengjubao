@@ -69,13 +69,13 @@
               // this.$store.commit('$vuexSetUserInfo')
               this.$router.push('/')
             }).catch((err) => {
-              this.$router.push('/demo/form')
+              this.$router.push('/backstage/accounts')
               this.$message.error(err.msg)
             }).fin(() => {
               this.isLoading = false
             })
           } else {
-            this.$router.push('/demo/form')
+            this.$router.push('/backstage/accounts')
             return false
           }
         })

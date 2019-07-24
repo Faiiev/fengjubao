@@ -80,5 +80,32 @@ export default {
   removeStorage (name) {
     if (!name) return
     window.localStorage.removeItem(name)
+  },
+
+
+ /**
+   *
+   * @param {hash 数组} array list = [
+    {"name": "John","Average":15,"High":10,"DtmStamp":1358226000000},
+    {"name": "Jane","Average":16,"High":92,"DtmStamp":1358226000000}]
+   * @param {筛选函数 } function(item){
+        return [item.name];
+      })
+      return [
+        [ { name: 'John', Average: 15, High: 10, DtmStamp: 1358226000000 }],
+        [ { name: 'Jane', Average: 16, High: 92, DtmStamp: 1358226000000 }]
+      ]
+   */
+  groupBy (array, f) {
+    let groups = {}
+    array.forEach(function(o) {
+      let group = JSON.stringify(f(o))
+      groups[group] = groups[group] || []
+      groups[group].push(o)
+    })
+    return Object.keys(groups).map(function(group) {
+      return groups[group]
+    })
   }
+
 }

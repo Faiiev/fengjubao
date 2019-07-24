@@ -5,7 +5,7 @@ export default [{
   path: '/demo',
   component: Frame,
   fullpath: 'demo',
-  // isHideInMenu: true,
+  isHideInMenu: true,
   meta: {
     title: $utils.titleLang('示例模块', 'Demo Moudle')
   },
