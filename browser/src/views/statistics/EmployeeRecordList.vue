@@ -21,14 +21,15 @@
               <el-table-column prop="epc" :label="$t('epc')"></el-table-column>
               <el-table-column :label="$t('status')">
                 <template slot-scope="scope">
-                  <span :class="{red: !scope.row.isQualified }">
-                      {{ scope.row.isQualified ? '合格' : '不合格' }}
-                  </span>
+                <span :class="{red: !scope.row.isQualified }">
+                  {{ scope.row.isQualified ? '合格' : '不合格' }}
+                </span>
                 </template>
               </el-table-column>
               <el-table-column prop="reason" :label="$t('reason')">
                 <template slot-scope="scope">
                   <el-select
+                    v-show="!scope.row.isQualified"
                     v-model="scope.row.reason"
                     @change="changeReason(scope.row)"
                     multiple
@@ -52,7 +53,7 @@
                       {{ $t('delete') }}
                     </el-button>
                     <el-button type="primary" size="medium" @click="onQualifiedClick(scope.row, scope.$index)">
-                      {{ scope.row.isQualified ? $t('changeToQualified') : $t('changeToUnqualified')}}
+                      {{ scope.row.isQualified ? $t('changeToUnqualified') : $t('changeToQualified')}}
                     </el-button>
                   </div>
                 </template>

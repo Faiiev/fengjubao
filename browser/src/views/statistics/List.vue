@@ -191,7 +191,14 @@ export default {
 
   created () {},
 
-  mounted () {},
+  mounted () {
+    if (this.$route.query && this.$route.query.date) {
+      this.form = Object.assign({}, this.form, {date: this.$route.query.date})
+    }
+    if (this.$route.query && this.$route.query.emplyeeNo) {
+      this.$set(this.form, 'employeeNo', this.$route.query.emplyeeNo)
+    }
+  },
 
   filters: {},
 

@@ -10,6 +10,7 @@
             <el-form-item label="时间范围">
               <el-date-picker
                 v-model="form.date"
+                @change="changepicker"
                 type="datetimerange"
                 range-separator="至"
                 start-placeholder="开始日期"
@@ -84,7 +85,7 @@ export default {
       form: {
         employeeName: 'ss',
         employeeNo: '',
-        date: [dayjs().subtract(1, 'day'), dayjs()]
+        date: [dayjs().subtract(2, 'day'), dayjs()]
       },
       tableData: [{
         employeeName: '倾城之链',
@@ -147,11 +148,20 @@ export default {
   },
 
   mounted () {
+    // console.log(dayjs().subtract(2, 'day') instanceof Date)
+    // console.log(this.form.date instanceof Date)
   },
 
   filters: {},
 
   methods: {
+    changepicker(vals) {
+      var formatDates = vals.map(val => {
+        return dayjs(dayjs(val).format('YYYY-MM-DD HH:mm:ss'))
+      })
+      this.$set(this.form, 'date', formatDates)
+    },
+
     handleSizeChange (val) {
       console.log(`每页 ${val} 条`)
       this.$set('pageSize', val)
@@ -169,9 +179,20 @@ export default {
 
     /* ----------------------------On Click Event---------------------------- */
     onEditClick (rowData, index) {
-      this.currentRowData = rowData
-      this.currentRowIndex = index
-      this.isDialogVisible = true
+      console.log(this.form.date)
+      this.$router.push({
+        path: 'statistics',
+        query: {
+          emplyeeNo: rowData.employeeNo,
+          date: this.form.date.map(t => {
+            // console.log(typeof t)
+            return t.format('YYYY-MM-DD HH:mm:ss')
+          })
+        }})
+      // console.log(this.form.date.map(t => t.format('YYYY-MM-DD HH:mm:ss')))
+      // this.currentRowData = rowData
+      // this.currentRowIndex = index
+      // this.isDialogVisible = true
     },
     onSubmit() {
       console.log('submit!')

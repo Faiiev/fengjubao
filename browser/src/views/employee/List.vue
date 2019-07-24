@@ -22,12 +22,7 @@
           </el-form>
           <h6>总计：{{total}}</h6>
           <el-table :data="tableData" border stripe highlight-current-row>
-            <el-table-column prop="employeeID" :label="$t('employeeID')">
-              <template slot-scope="scope">
-                    <el-input size="small" v-model="scope.row.id" placeholder="请输入内容" @change="handleEdit(scope.$index, scope.row)"></el-input> 
-                    <span>{{scope.row.id}}</span>
-                </template>
-            </el-table-column>
+            <el-table-column prop="employeeID" :label="$t('employeeID')"></el-table-column>
             <el-table-column prop="employeeName" :label="$t('employeeName')">
               <template slot-scope="scope">
                 <a :href="'employee/'+scope.row.name"
@@ -36,7 +31,12 @@
                 </a>
               </template>
             </el-table-column>
-            <el-table-column prop="employeeNo" :label="$t('employeeNo')"></el-table-column>
+            <el-table-column prop="employeeNo" :label="$t('employeeNo')">
+              <template slot-scope="scope">
+                <el-input size="small" v-model="scope.row.employeeNo" placeholder="请输入内容" @change="handleEdit(scope.$index, scope.row)"></el-input>
+                <span>{{scope.row.employeeNo}}</span>
+              </template>
+            </el-table-column>
             <el-table-column :label="$t('edit')">
               <template slot-scope="scope">
                 <div class="operation-area">
@@ -49,10 +49,10 @@
                       {{ $t('disable') }}
                     </el-button>
                   </div>
-                  <div v-else> 
+                  <div v-else>
                     <el-button type="warning" size="medium" @click="onDisableClick(scope.row, scope.$index)">
                       {{ $t('enable') }}
-                    </el-button> 
+                    </el-button>
                   </div>
                 </div>
               </template>
@@ -98,7 +98,7 @@ export default {
         date: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)]
       },
       tableData: [{
-        id: 'ID111',
+        employeeID: 'ID111',
         name: '倾城之链',
         employeeNo: '111',
         entryTotal: '22',
@@ -108,7 +108,7 @@ export default {
         isEnable: true
       },
       {
-        id: 'ID222',
+        employeeID: 'ID222',
         name: '晚晴幽草轩',
         employeeNo: '222',
         entryTotal: '44',
@@ -118,7 +118,7 @@ export default {
         isEnable: false
       },
       {
-        id: 'ID333',
+        employeeID: 'ID333',
         name: '静晴轩别苑',
         employeeNo: '333',
         entryTotal: '44',
@@ -128,7 +128,7 @@ export default {
         isEnable: false
       },
       {
-        id: 'ID333',
+        employeeID: 'ID333',
         name: '天意人间舫',
         employeeNo: '444',
         entryTotal: '88',
@@ -138,7 +138,7 @@ export default {
         isEnable: false
       },
       {
-        id: 'ID444',
+        employeeID: 'ID444',
         name: 'Vue-Cli3 实践参考',
         employeeNo: '555',
         entryTotal: '110',
@@ -268,7 +268,7 @@ export default {
 
     .operation-area {
       button:first-child + div {
-        margin-left: 10px 
+        margin-left: 10px
       }
     }
   }
