@@ -1,0 +1,4 @@
+rootProject.name = 'fengjubao'
+include 'server'
+include 'browser'
+
