@@ -1,0 +1,17 @@
+{
+  "jumpToAliasFile.alias": {
+    "vue$": "vue/dist/vue.min.js",
+    "@": "/home/kougen/project/fengjubao/browser/src",
+    "@assets": "/home/kougen/project/fengjubao/browser/src/assets",
+    "@constants": "/home/kougen/project/fengjubao/browser/src/constants",
+    "@partials": "/home/kougen/project/fengjubao/browser/src/partials",
+    "@views": "/home/kougen/project/fengjubao/browser/src/views",
+    "@pages": "/home/kougen/project/fengjubao/browser/src/views/pages",
+    "@components": "/home/kougen/project/fengjubao/browser/src/components",
+    "@router": "/home/kougen/project/fengjubao/browser/src/router",
+    "@store": "/home/kougen/project/fengjubao/browser/src/store",
+    "@helper": "/home/kougen/project/fengjubao/browser/src/helper",
+    "@services": "/home/kougen/project/fengjubao/browser/src/services",
+    "@mixins": "/home/kougen/project/fengjubao/browser/src/mixins"
+  }
+}
