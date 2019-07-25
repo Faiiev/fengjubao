@@ -7,7 +7,6 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
- * created by CaiBaoHong at 2018/4/17 14:55<br>
  */
 @TableName("sys_user_role")
 public class SysUserRole implements Serializable {

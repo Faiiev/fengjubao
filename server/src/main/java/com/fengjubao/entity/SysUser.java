@@ -11,7 +11,6 @@ import java.io.Serializable;
 import java.util.*;
 
 /**
- * created by CaiBaoHong at 2018/4/17 14:55<br>
  */
 @TableName("sys_user")
 public class SysUser extends Model<SysUser> {

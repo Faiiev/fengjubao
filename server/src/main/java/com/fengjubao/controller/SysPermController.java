@@ -27,7 +27,6 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 /**
- * created by CaiBaoHong at 2018/4/17 16:41<br>
  */
 @PermInfo(value = "系统权限模块")
 @RequiresPermissions("a:sys:perm")

@@ -12,7 +12,6 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * created by CaiBaoHong at 2018/4/17 14:55<br>
  */
 @TableName("sys_perm")
 public class SysPerm extends Model<SysPerm> {

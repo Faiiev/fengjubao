@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * created by CaiBaoHong at 2018/4/17 14:16<br>
  */
 @PermInfo(value = "测试模块模块", pval = "a:test")
 @RestController

@@ -3,7 +3,6 @@ package com.fengjubao.vo;
 import java.util.HashMap;
 
 /**
- * Created by CaiBaoHong on 2017/2/15.
  *
  */
 public class Json extends HashMap<String, Object> {

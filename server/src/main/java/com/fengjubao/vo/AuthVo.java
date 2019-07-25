@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSON;
 import java.util.Objects;
 
 /**
- * created by CaiBaoHong at 2018/5/14 16:14<br>
  *     用于存储角色或权限的值
  */
 public class AuthVo {

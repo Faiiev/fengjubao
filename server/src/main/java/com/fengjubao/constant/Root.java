@@ -1,7 +1,6 @@
 package com.fengjubao.constant;
 
 /**
- * created by CaiBaoHong at 2018/5/16 11:08<br>
  *     管理员的特殊值
  */
 public interface Root {
